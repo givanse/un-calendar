@@ -2,17 +2,20 @@
   <div class="un-calendar-header">
     {{#unless disableControls}}
       <nav>
-        <button {{action "prev"}} {{bind-attr disabled="isPrevDisabled"}} class="un-calendar-prev">
-          <span>{{{unbound prevLabel}}}</span>
-        </button>
-        <button {{action "next"}} {{bind-attr disabled="isNextDisabled"}} class="un-calendar-next">
-          <span>{{{unbound nextLabel}}}</span>
-        </button>
         {{#unless disableTodayButton}}
           <button {{action "today"}} class="un-calendar-today">
             <span>{{{unbound todayLabel}}}</span>
           </button>
         {{/unless}}
+
+        <span class="un-calendar-labels">
+          <button {{action "prev"}} {{bind-attr disabled="isPrevDisabled"}} class="un-calendar-prev">
+            <span>{{{unbound prevLabel}}}</span>
+          </button>
+          <button {{action "next"}} {{bind-attr disabled="isNextDisabled"}} class="un-calendar-next">
+            <span>{{{unbound nextLabel}}}</span>
+          </button>
+        </span>
       </nav>
     {{/unless}}
   </div>

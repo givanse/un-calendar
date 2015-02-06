@@ -121,7 +121,10 @@ export default Ember.Component.extend({
 
   addDate: function(date) {
     this.removeDate(date);
+    // TODO: A smarter insertion instead of just push and avoid sorting later.
     this.get('selectedDates').pushObject(date);
+    var sarr = this.get('selectedDates').sortBy('_i')
+    this.set('selectedDates', sarr);
   },
 
   selectedDateWillChange: function() {
